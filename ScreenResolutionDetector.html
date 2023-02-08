@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Screen Resolution</title>
+  <style>
+    body {
+      background-image: url('https://cdn.pixabay.com/photo/2015/07/17/22/43/student-849822_960_720.jpg');
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      height: 100vh;
+      justify-content: center;
+    }
+    
+    .box {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px rgba(0,0,0,0.25);
+      padding: 20px;
+      text-align: center;
+      width: 500px;
+    }
+    
+    h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+    
+    p {
+      font-size: 24px;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>Your Screen Resolution:</h1>
+    <p id="resolution"></p>
+    <p>Make sure you are full screened for an accurate resolution</p>
+  </div>
+  
+  <script>
+    const displayResolution = () => {
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+      document.querySelector('#resolution').innerHTML = `${width} x ${height}`;
+    }
+    window.onload = displayResolution;
+    window.onresize = displayResolution;
+  </script>
+</body>
+</html>
